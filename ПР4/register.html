@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>ВСЁ о РСУБД</title> <!-- Заголовок страницы -->
+    <meta charset="utf-8"> <!-- Кодировка -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> <!-- Иконка вкладки -->
+    <link rel="stylesheet" href="styles/register-style.css" type="text/css">
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo" width="50" height="50"></a>
+        <nav class="header-nav">
+            <a class="" href="index.html">Главная</a>
+            <a href="#all_articles">Все статьи</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+        <nav class="header-register" id="header-register">
+            <a href="register.html" class="active">Регистрация</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <form>
+            <fieldset>
+              <label for="name">Имя:</label>
+              <input type="text" id="name" name="name" placeholder="Введите имя" required>
+        
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Введите email" required>
+
+              <label for="tel">Номер телефона:</label>
+              <input type="tel" id="tel" name="tel" placeholder="+7 (123) 456 78 90" required>
+
+              <label for="email">Пароль:</label>
+              <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+        
+              <label>Пол:</label>
+              <label for="male" class="male">М</label>
+              <input type="radio" id="male" name="gender" class="male" value="male" checked> 
+              <label for="female" class="female">Ж</label>
+              <input type="radio" id="female" class="female" name="gender" value="female">
+        
+              <label for="message">Сообщение:</label>
+              <textarea id="message" name="message" rows="4" cols="50" placeholder="Введите сообщение" minlength="10" maxlength="200" required></textarea>
+                
+              <label for="birthday">Дата рождения:</label>
+              <input type="datetime-local" id="birthday" name="birthday" min="2000-01-01T00:00" max="2050-12-31T23:59" required>
+
+              <label for="who">Кто вы:</label>
+              <select name="who" id="who" required>
+                  <option value="programmer">Программист</option>
+                  <option value="student">Студент</option>
+              </select>
+
+              <label for="file">Загрузите картинку профиля:</label>
+              <input type="file" id="file" name="file" accept=".png,.jpeg,.jpg,.">
+        
+              <input type="submit" value="Отправить">
+            </fieldset>
+          </form>
+
+
+    </main>
+
+
+
+
+</body>
+
+</html>

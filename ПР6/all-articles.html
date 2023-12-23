@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>ВСЁ о РСУБД</title> <!-- Заголовок страницы -->
+  <meta charset="windows-1251"> <!-- Кодировка -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> <!-- Иконка вкладки -->
+  <link rel="stylesheet" href="styles/header-style.css" type="text/css"> <!-- Стили шапки -->
+  <link rel="stylesheet" href="styles/all-articles-style.css" type="text/css">
+  <link rel="stylesheet" href="styles/article-cards-buttons-style.css" type="text/css"> <!-- Стили кнопок -->
+  <link rel="stylesheet" href="styles/footer-style.css" type="text/css"> <!-- Стили футера -->
+</head>
+
+<body>
+  <input type="checkbox" id="check-menu" class="check-menu">
+  <label for="check-menu" class="check-menu-label"></label>
+
+  <header class="header">
+
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo" width="50" height="50"></a>
+    <nav class="header-nav">
+      <a href="index.html">Главная</a>
+      <a href="all-articles.html" class="active">Все статьи</a>
+      <a href="#contact">Контакты</a>
+      <a href="gallery.html">Галерея</a>
+
+
+      <!-- <div class="arrow">›</div> -->
+    </nav>
+    <div class="auth">
+      <button class="notification-button">
+        <svg class="bell" viewBox="0 0 448 512">
+          <path
+            d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z">
+          </path>
+          
+        </svg>
+        <span class="badge">2</span>
+
+        <div class="notification-popup">
+          <h3>Новые статьи:</h3>
+          <ul>
+              <li><a href="#">Эффективные SQL-запросы</a></li>
+              <li><a href="#">PostgreSQL: быстрый старт </a></li>
+              <!-- Добавьте больше элементов списка для других статей -->
+          </ul>
+      </div>
+
+      </button>
+
+      <a href="register.html"  class="register">Регистрация</a>
+
+    </div>
+
+    <div class="burger"> <!-- Иконка бургер меню -->
+      <span></span>
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- Статья 1: Введение в РСУБД -->
+    <div class="article-card" id="article1">
+        <h2 class="article-title">Введение в РСУБД</h2>
+        <div class="image-container">
+          <img src="images/intro.jpg" alt="РСУБД">
+          <div class="overlay">
+            <h3>Введение в РСУБД</h3>
+            <p>В статье описываются основные термины связанные с БД, а также фундаментальные принципы при работе с СУБД.</p>
+            <button class="article-button" id="button1">Подробнее</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Статья 2 -->
+      <div class="article-card" id="article2">
+        <h2 class="article-title">10 советов по оптимизации баз данных</h2>
+        <div class="image-container">
+          <img src="images/opt.jpeg" alt="10 советов по оптимизации баз данных">
+          <div class="overlay">
+            <h3>10 советов по оптимизации баз данных</h3>
+            <p> В данной статье будут даны общие рекомендации по настройке оптимизации как БД, так и всей СУБД в целом. Также
+                будут даны основные ...</p>
+            <button class="article-button" id="button2">Подробнее</button>
+          </div>
+        </div>
+      </div>
+
+<!-- Статья 3 -->
+      <div class="article-card" id="article3">
+        <h2 class="article-title">Эффективные SQL-запросы</h2>
+        <div class="image-container">
+          <img src="images/sql-quary-article1.jpg" alt="Изображение статьи">
+          <div class="overlay">
+            <h3>Эффективные SQL-запросы</h3>
+            <p>Язык структурированных запросов (SQL) является незаменимым навыком в индустрии информатики, и вообще говоря, изучение этого навыка...</p>
+            <button class="article-button" id="button3">
+                <span class="text">Подробнее</span>
+              </button>
+          </div>
+        </div>
+      </div>
+
+<!-- Статья 4 -->
+      <div class="article-card" id="article4">
+        <h2 class="article-title">PostgreSQL: быстрый старт</h2>
+        <div class="image-container">
+          <img src="images/postgres.jpg" alt="PostgreSQL: быстрый старт">
+          <div class="overlay">
+            <h3>PostgreSQL: быстрый старт</h3>
+            <p>Введение в СУБД PostgreSQL, позволяющее начать работу с данной системой.</p>
+            <div class="article-button" id="button4">
+                <div id="translate"></div>
+                <a href="#">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/GQfC0nYrto8?si=RxtguloGCu2YAp0L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+          
+        </iframe>
+        <div class="video-information-window">
+          <h3>Видео затрагивает следующие вопросы:</h3>
+          <p>Введение в SQL. Что такое база данных? Реляционные и неряционные БД.</p>
+          
+        </div>
+        
+     
+        
+
+
+      </div>
+
+  </main>
+
+
+  <footer> <!-- Футер с контактной информацией -->
+    <div class="footer-text">
+      <p>Контакты:</p>
+      <address>
+        <p id="contact">Телефон: <a href="tel:71234567890">+7 (123) 456-78-90</a></p>
+        <p>Email: <a href="mailto:info@mail.com">info@mail.com</a></p>
+      </address>
+      <p><small>Copyright © 2023 RelationalDB. All rights reserved.</small></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

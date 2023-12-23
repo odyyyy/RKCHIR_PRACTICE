@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+body{
+  overflow-x: hidden;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  width: 100%;
+  z-index: 100;
+  background-color: #242c2f;
+  transition: all 0.3s ease;
+
+
+}
+
+.header a {
+  transition: all 0.3s ease-in-out;
+  color: white;
+  padding: 12px;
+  margin-right: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 4px;
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: 'Fira Sans', sans-serif;
+}
+
+/* Выравнивание по центру */
+.header-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
+  display: flex;
+}
+
+/* Изменение цвета фона при наведении курсора */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.auth{
+  display: flex;
+  justify-content: space-between;
+  width: 225px;
+}
+
+
+#check-menu {
+  display: none;
+}
+
+
+/* Лейбл для активации чекбокса (меню-бургера) */
+.check-menu-label {
+  display: none;
+  position: fixed;
+  width: 62px;
+  height: 8vh;
+  right: 0;
+
+  z-index: 105;
+  cursor: pointer;
+}
+
+/* Стили для бургер-меню */
+.burger {
+  display: none;
+  position: absolute; /* Change to absolute */
+  z-index: 50;
+  align-items: center;
+  width: 30px;
+  height: 18px;
+  right: 10px; /* Adjust this value as needed */
+}
+
+
+/* Стили для полоски бургера */
+.burger span {
+  height: 2px;
+  width: 100%;
+  transform: scale(1);
+  background-color: #ddd;
+}
+
+/* Добавление двух других слоев "бургера" */
+.burger::after,
+.burger::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #ddd;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Позиционирование слоев бургера */
+.burger::before {
+  top: 0;
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+
+
+
+@media screen and (max-width: 980px) {
+
+/* Отображение меню-бургера на экране */
+  .burger {
+    display: flex;
+    margin-right: 10px;
+  }
+
+  /* Скрытие элементов меню кроме лого */
+  .header-nav,
+  .auth {
+    display: none;
+    
+  }
+
+  .header-nav{
+    position:static;
+    transform: translateX(0);
+  }
+
+  .check-menu-label {
+    display: flex;
+
+  }
+
+  /* Устанвока элементов меню в одну колонку */
+  #check-menu:checked~.header {
+
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    transition: all 0.3s ease-in-out;
+
+  }
+
+  #check-menu:checked~header .header-nav,
+  #check-menu:checked~header .auth {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+
+/* Сдвиг лейбла при открытии меню */
+  #check-menu:checked ~ .check-menu-label{
+    height: 5vh;
+    top: 55vh;
+    right: 47vw;
+  
+
+  }
+
+  #check-menu:checked ~ header .burger{
+    margin-bottom: 10px;
+    margin-right: 0px;
+    position: sticky;
+  }
+
+  /* Добавление анимации к иконки бургера */
+  #check-menu:checked~header .burger span {
+    transform: scale(0);
+  }
+
+
+
+  #check-menu:checked~header .burger::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+  }
+
+
+  #check-menu:checked~header .burger::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+  }
+
+  #check-menu:checked~header .auth .notification-button{
+    display: block;
+    width: 4.5vw;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+  }
+
+  #check-menu:checked~header .auth .notification-button .notification-popup ul li a{
+    font-size: 13px;
+  }
+
+
+
+}
+
+
+
+
+
+
+/* Стили для уведомлений */
+
+.notification-button{
+  position: relative;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 43px;
+  border-radius: 50%;
+}
+
+
+.bell {
+  width: 25px;
+  border-radius: 25px;
+}
+
+.bell path {
+  display: flex;
+  fill: rgb(62, 116, 234);
+}
+
+/* Стили для элемента, который отображает кол-во уведомлений */
+.notification-button .badge {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 1px;
+  right: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+
+/* Плашка со список статей */
+.notification-popup {
+  display: none;
+  flex-direction: column;
+  width: 15vw;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(233, 231, 231);
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.notification-button:hover .notification-popup {
+  display: flex;
+}
+
+.notification-popup h3 {
+  text-align: center;
+}
+
+.notification-popup ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notification-popup li {
+  margin: 5px 0;
+  padding-top: 15px;
+}
+
+.notification-popup li a{
+  position: relative;
+}
+
+.notification-popup a {
+  text-decoration: none;
+  color: #333;
+}
+
+
+.notif-close-button{
+  top: -5px;
+  right: -5px;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  border-style: none;
+  background-color: #fff;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+
+/* Анимация для колокола */
+
+@keyframes bellAnimation {
+  0%,
+  100% {
+    transform-origin: top;
+  }
+
+  15% {
+    transform: rotateZ(10deg);
+  }
+
+  30% {
+    transform: rotateZ(-10deg);
+  }
+
+  45% {
+    transform: rotateZ(5deg);
+  }
+
+  60% {
+    transform: rotateZ(-5deg);
+  }
+
+  75% {
+    transform: rotateZ(2deg);
+  }
+}
+
+.notification-button:hover{
+  background-color: #e1e5e6;
+  animation: bellAnimation 0.9s both;
+  transition: 0.5ms ease-in-out;
+
+}
+

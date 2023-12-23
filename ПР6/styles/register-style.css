@@ -1,0 +1,114 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background-color: #f4f3f3;
+}
+
+
+/* Стиль активной/текущей ссылки */
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+
+
+main{
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset{
+  border-width: 0px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+  margin-top : 40px;
+  margin-bottom: 40px;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+/* Стили для полей ввода */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+input[type="checkbox"],
+input[type="submit"],
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="radio"]{
+  display: inline;
+}
+.male, .female{
+  display: inline;
+  font-weight: lighter;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+/* Стили для полей ввода в фокусе */
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+input[type="datetime-local"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Стили для подсказок placeholder */
+input::placeholder {
+  color: #999;
+}
+
+/* Стили для кнопок и текстовых областей */
+button,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+}
+
+
+
+/* Стили для лейблов */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Стили для селектов */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+

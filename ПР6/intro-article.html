@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Введение в реляционные СУБД</title> <!-- Заголовок страницы -->
+  <meta charset="utf-8"> <!-- Кодировка -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> <!-- Иконка вкладки -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Подключение шрифта Roboto Slab -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&family=Roboto:wght@100&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/header-style.css" type="text/css"> <!-- Стили шапки -->
+  <link rel="stylesheet" href="styles/style-article.css" type="text/css">
+  <!-- Подключение стилей для контента страницы-->
+  <link rel="stylesheet" href="styles/footer-style.css" type="text/css"> <!-- Стили футера -->
+</head>
+
+<body>
+
+  <input type="checkbox" id="check-menu" class="check-menu">
+  <label for="check-menu" class="check-menu-label"></label>
+
+  <header class="header">
+
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo" width="50" height="50"></a>
+    <nav class="header-nav">
+      <a class="active" href="index.html">Главная</a>
+      <a href="#all_articles">Все статьи</a>
+      <a href="#contact">Контакты</a>
+      <a href="gallery.html">Галерея</a>
+
+
+      <!-- <div class="arrow">›</div> -->
+    </nav>
+    <div class="auth">
+      <button class="notification-button">
+        <svg class="bell" viewBox="0 0 448 512">
+          <path
+            d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z">
+          </path>
+          
+        </svg>
+        <span class="badge">2</span>
+
+        <div class="notification-popup">
+          <h3>Новые статьи:</h3>
+          <ul>
+              <li><a href="#">Эффективные SQL-запросы</a></li>
+              <li><a href="#">PostgreSQL:быстрый старт</a></li>
+              <!-- Добавьте больше элементов списка для других статей -->
+          </ul>
+      </div>
+
+      </button>
+
+      <a href="register.html" class="register">Регистрация</a>
+
+    </div>
+
+
+    <div class="burger"> <!-- Иконка бургер меню -->
+      <span></span>
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+<div class="popular-arcticles-container">
+  <aside id="popular-articles" class="popular-articles"> <!-- Боковой блок с ссылками на другие статьи -->
+    <h2>Популярные статьи</h2>
+    <ul class="popular-articles-list">
+      <li><a href="optimization-article.html">10 советов по оптимизации баз данных</a></li>
+      <li><a href="optimization-article.html">Искусство написания эффективных SQL-запросов</a></li>
+      <li><a href="optimization-article.html">Новости в мире реляционных СУБД</a></li>
+    </ul>
+  </aside>
+</div>
+    <h1>Введение в реляционные СУБД</h1>
+    <h2>Содержание статьи:</h2>
+    <nav> <!-- Меню для перемещения по странице -->
+      <ol>
+        <li><a href="#db"> <strong> Определение </strong></a> </li>
+        <li><a href="#dbtype"><strong>Типы баз данных</strong> </a></li>
+        <li><a href="#reldb"> <strong> Реляционные базы данных </strong> </a></li>
+        <li><a href="#rel-db-example"> <strong> Примеры реляционных СУБД </strong> </a></li>
+        <li>
+          <a href="#sql"> <strong> Язык запросов SQL </strong> </a>
+          <ul type="circle"> <!-- Вложенный маркированный список подзаголовков -->
+            <li> <a href="#sqlbegin"> <strong>Начало работы с SQL</strong> </a> </li>
+            <li> <a href="#sqlexample"> <strong>Примеры построения основных SQL запросов</strong> </a> </li>
+          </ul>
+        </li>
+        <li><a href="#acid"> <strong> Требования ACID </strong> </a></li>
+      </ol>
+    </nav>
+
+
+
+    <!-- Пункт:  Что такое база данных?-->
+    <article>
+      <section class="db">
+        <h2 id=db>Что такое база данных?</h2>
+        <p> <strong><a href="https://practicum.yandex.ru/blog/chto-takoe-bazy-dannyh/">База данных</a></strong> — это
+          упорядоченный набор структурированной информации или данных,
+          которые обычно хранятся в электронном виде в компьютерной системе.
+          База данных обычно управляется <u>системой управления базами данных</u> (СУБД).
+          Данные вместе с СУБД, а также приложения, которые с ними связаны,
+          называются системой баз данных, или, для краткости, просто базой данных.
+        </p>
+      </section>
+      <!-- Пункт:  Типы баз данных-->
+      <section class="db-type">
+        <h2 id=dbtype>Типы баз данных</h2>
+        <p>Существует несколько типов баз данных. Выделим некоторые из них:</p>
+        <ul> <!-- Маркированый список типов БД-->
+          <li>Реляционные базы данных</li>
+          <li>Key-value базы данных</li>
+          <li>Документно-ориентированные базы данных</li>
+          <li>Графовые базы данных</li>
+          <li>Колоночные базы данных</li>
+        </ul>
+        <img src="images/sql_vs_nosql.png" alt="SQL и NoSQL СУБД" width="700" height="400">
+        <!-- Картинка иллюстрирующая классификацию БД -->
+      </section>
+
+      <!-- Пункт:  Реляционные базы данных-->
+      <section class="rel-db">
+        <h2 id=reldb>Реляционные базы данных</h2>
+        <p> <strong>Реляционная база данных</strong> – это набор данных с предопределенными
+          связями между ними. Эти данные организованны в виде набора таблиц,
+          состоящих из столбцов и строк.
+          В таблицах хранится информация об объектах, представленных в базе данных.
+        </p>
+        <p>
+          В каждом столбце таблицы хранится определенный тип данных,
+          в каждой ячейке – значение атрибута. Каждая строка таблицы представляет собой набор
+          связанных значений, относящихся к одному объекту или сущности.
+        </p>
+        <p>
+          Каждая строка в таблице может быть помечена уникальным идентификатором,
+          называемым первичным ключом, а строки из нескольких таблиц могут быть связаны
+          с помощью внешних ключей. К этим данным можно получить доступ многими способами,
+          и при этом реорганизовывать таблицы БД не требуется.
+        </p>
+        <img src="images/d4ef031ad6d0cb8c9c53e94912f52713.png" alt="Пример устройства реляционной СУБД" width="700"
+          height="400">
+        <br>
+      </section>
+      <!-- Пункт: Примеры реляционных СУБД-->
+      <section class="db-example">
+        <h2 id=rel-db-example>Примеры реляционных СУБД</h2>
+        <p>
+          Самые популярные примеры РСУБД: MySQL, Oracle DB, PostgreSQL, Microsoft SQL Server.
+          Они имеют определенные преимущества и недостатки. Стоимость, масштабируемость, функции,
+          простота использования и поддержка — все это важные факторы при выборе лучшей СУБД для ваших задач.
+          Вы можете выбрать СУБД, которая наиболее соответствует вашим потребностям. Например, для обучения можно
+          использовать
+          MySQL.
+        </p>
+        <!-- Картинка-карта с примерами РСУБД -->
+        <img src="images/db-example.png" alt="Примеры РСУБД" width="800" height="500" usemap="#db-example-map">
+        <map name="db-example-map">
+          <area shape="circle" coords="660,400,90" href="https://www.postgresql.org/" alt="PostgreSQL">
+          <!-- Форма для PostgreSQL -->
+          <area shape="rect" coords="420,240,920,295" href="https://www.oracle.com/database/" alt="Oracle">
+          <!-- Форма для Oracle -->
+          <area shape="poly" coords="820,1,760,25,780,90,720,180,840,210,880,100,950,90"
+            href="https://www.microsoft.com/sql-server/" alt="Microsoft SQL Server">
+          <!-- Форма для Microsoft SQL Server -->
+          <area shape="rect" coords="360,70,700,130" href="https://www.mysql.com/" alt="MySQL"> <!-- Форма для MySQL -->
+        </map>
+      </section>
+      <!-- Пункт: Язык запросов SQL-->
+      <section>
+        <h2 id=sql>Язык запросов SQL</h2>
+        <p>Для взаимодействия с реляционными базами данных чаще всего используется
+          <b>
+            <abbr title="Structured Query Language">SQL</abbr> <!-- Расшифровка аббревиатуры SQL -->
+          </b>.
+          Это специальный язык программирования, на котором пишутся запросы к реляционной базе.
+          SQL-запросами можно создавать и удалять таблицы в реляционной базе,
+          изменять данные в существующих таблицах и доставать из таблиц необходимую информацию.
+        </p>
+        <p>Реляционные базы данных удобно использовать в аналитике, так как информация в них структурирована и
+          распределена
+          по
+          смыслу,
+          что, конечно, мечта любого аналитика. Однако, аналитики часто пишут сложные и не очень эффективные
+          SQL-запросы,
+          потому важно придумывать способы ускорения обработки запросов к реляционной базе.</p>
+        <!-- Вставка с цитатой -->
+        <blockquote>
+          <p>
+            SQL – стандартный язык для всех реляционных баз данных, но сам по себе этот факт не делает его реляционным.
+            Как это ни печально, SQL слишком часто отходит от принципов реляционной теории.
+          </p>
+          <cite>К. Дейт "SQL и реляционная теория" </cite>
+        </blockquote>
+        <img src="images/sql_quary_ex.webp" alt="SQL" width="700" height="400">
+        <!-- Подпункт: Начало работы с SQL-->
+        <h3 id="sqlbegin">Начало работы с SQL</h3>
+        <p>
+          Синтаксис операторов SQL является очень простым.
+          Чтобы работать с ними, хватит базовых познаний в Еxcel и начального уровня английского языка.
+          Ведь в основном операторам SQL задаются очень простые команды:
+        </p>
+        <!-- Маркированный список базовых SQL команд -->
+        <ul type="circle">
+          <li><strong> SELECT </strong> — выбор данных.</li>
+          <li><strong> FROM </strong> — источник информации, откуда брать данные.</li>
+          <li><strong> JOIN </strong> — добавление таблиц.</li>
+          <li><strong> WHERE </strong> — при каком условии.</li>
+          <li><strong> GROUP BY </strong> — сформируй группу данных по заданному признаку.</li>
+          <li><strong> ORDER BY </strong> — сортировка данных по нужному признаку.</li>
+          <li><strong> LIMIT </strong> —количество результатов.</li>
+          <li><strong>;</strong> — конец предложения</li>
+        </ul>
+        <p>
+          Все системы, работающие с SQL операторами, имеют подобную структуру. Они включают в себя базу данных в виде
+          таблицы,
+          из которой пользователь черпает информацию, возможность отправки запросов и получения результата.
+        </p>
+      </section>
+      <!-- Подпункт: Примеры построения основных SQL запросов-->
+      <section>
+        <h3 id="sqlexample"> Примеры построения основных SQL запросов: </h3>
+        <ul type="square">
+          <li><b>SELECT :</b> <em>SELECT * FROM имя таблицы;</em>
+          </li>
+          <br>
+          <li><b>UPDATE :</b> <em>UPDATE `имя таблицы` SET name='Ivan' WHERE id=1</em> </li>
+          <br>
+          <li><b>INSERT :</b> <em>INSERT INTO имя таблицы (id, name, surname) VALUES(2, 'IVAN', NULL);</em> </li>
+          <br>
+          <li><b>DELETE :</b> <em>DELETE FROM `имя таблицы` WHERE id = 1;</em> </li>
+        </ul>
+      </section>
+      <!-- Пункт: Требования ACID-->
+      <section>
+        <h2 id="acid"> Требования ACID </h2>
+        <p>
+          Реляционные базы данных, в отличие от нереляционных, соответствуют
+          ACID — это требования к транзакционным системам.
+          Соответствие им гарантирует сохранность данных и предсказуемость работы базы данных:
+        </p>
+        <!-- Маркированный список описаний пунктов ACID -->
+        <ul>
+          <dl>
+            <dt>
+              <li> <u>Атомарность</u> </li>
+            </dt>
+            <dd>
+              условие, при котором либо транзакция успешно выполняется целиком,
+              либо, если какая-либо из ее частей не выполняется, вся транзакция отменяется.
+            </dd>
+            <br>
+            <dt>
+              <li> <u>Единообразие</u> </li>
+            </dt>
+            <dd>
+              условие, при котором данные, записываемые в базу данных в рамках транзакции,
+              должны соответствовать всем правилам и ограничениям, включая ограничения целостности, каскады и триггеры.
+            </dd>
+            <br>
+            <dt>
+              <li> <u>Изолированность</u> </li>
+            </dt>
+            <dd>
+              условие, гаратирующее, что во избежание путаницы транзакция не повлияет на другие элементы до
+              окончательного
+              сохранения изменений.
+            </dd>
+            <br>
+            <dt>
+              <li> <u>Неизменность</u> </li>
+            </dt>
+            <dd>
+              обеспечивает неизменность данных после сохранения изменений в результате транзакции.
+            </dd>
+          </dl>
+        </ul>
+
+        <!-- Видео о ACID принципах -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vFmajCQ7Wuc?si=-0MPBFTAF8yU5es9"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+
+        <!-- Google карта -->
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d577332.5657806598!2d36.72621789973605!3d55.581033558078225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54afc73d4b0c9%3A0x3d44d6cc5757cf4c!2z0JzQvtGB0LrQstCw!5e0!3m2!1sru!2sru!4v1696084577990!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+      </section>
+    </article>
+
+  </main>
+
+
+
+  <footer> <!-- Футер с контактной информацией -->
+    <div class="footer-text">
+      <p>Контакты:</p>
+      <address>
+        <p id="contact">Телефон: <a href="tel:71234567890">+7 (123) 456-78-90</a></p>
+        <p>Email: <a href="mailto:info@mail.com">info@mail.com</a></p>
+      </address>
+      <p><small>Copyright © 2023 RelationalDB. All rights reserved.</small></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

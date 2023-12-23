@@ -1,0 +1,96 @@
+/* Стили для футера */
+
+
+
+.footer-container {
+    background-color: #242c2f;
+    color: #ffffffd6;
+
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.about-us,  .navigation, .contact-info , .footer-col{
+    width: 20%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation{
+    width: 15%;
+}
+
+
+
+.contact-info p a, .navigation a, .footer-col a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info h2,  .about-us h2, .navigation h2, .footer-col h2{
+    font-size: 24px;
+    margin: 0;
+    
+}
+
+.contact-info div{
+    display: flex;
+    align-items: center;
+}
+
+.contact-info div svg{
+    margin-right: 10px;
+}
+
+.navigation ul, .footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation ul li , .footer-col ul li{
+    margin: 5px 0;
+}
+
+
+
+
+/* Стиль для иконок */
+.footer-social-icon-svg {
+    fill: #fffff2;
+    z-index: 10;
+}
+
+
+
+.social-icons button { 
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #242c2f;
+    box-shadow: #242424 3px 3px 3px 2px;
+    transition: background 0.3s ease; 
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.social-icons button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #647dfb, #002e84);
+    transition: left 0.3s ease, opacity 0.3s ease; 
+    opacity: 0.5;
+}
+
+.social-icons button:hover::before {
+    left: 0;
+}

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f3f3;
+
+}
+
+/* Стиль активной/текущей ссылки */
+.header a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .article-card {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    background-color: #ffffff;
+    width: 35vw;
+    height: 25vw;
+    background-color: white;
+    /* max-width: 800px; */
+    /* margin: 0 auto; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 15px;
+
+    transition: 0.5s ease-out;
+    overflow: visible;
+  }
+
+
+  .article-card:hover{
+    box-shadow: 0 7px 18px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .article-title {
+    font-size: 30px;
+    margin: 25px 0;
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px 0px 15px 15px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(216, 92, 238, 0.7), rgba(62, 149, 220, 0.7));
+    color: #fff;
+    opacity: 0;
+    transition: all 0.9s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .overlay h3{
+    font-size: 1.5em;
+  }
+  
+  .read-more-button {
+    background: #0074D9;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: none; /* Изначально скрыта */
+    transition: all 0.5s;
+  }
+  
+  .image-container:hover .read-more-button {
+    display: inline-block; /* Показать кнопку при наведении */
+  }
+
+  .image-container:hover img {
+    opacity: 0.7; /* Прозрачность при наведении */
+  }
+  
+  .image-container:hover .overlay {
+    opacity: 1; /* Прозрачность при наведении */
+  }
+
+
+
+  .parallax-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-content {
+  width: 50%;
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+  
+@media screen and (max-width: 1200px) {
+    .article-title{
+        font-size:19px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .article-title{
+        font-size:15px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .article-title{
+        font-size:10px;
+    }
+}

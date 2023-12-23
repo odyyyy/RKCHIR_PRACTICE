@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>ВСЁ о РСУБД</title> <!-- Заголовок страницы -->
+  <meta charset="utf-8"> <!-- Кодировка -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> <!-- Иконка вкладки -->
+  <link rel="stylesheet" href="styles/header-style.css" type="text/css"> <!-- Стили шапки -->
+  <link rel="stylesheet" href="styles/style.css" type="text/css">
+  <link rel="stylesheet" href="styles/article-cards-buttons-style.css" type="text/css"> <!-- Стили кнопок -->
+  <link rel="stylesheet" href="styles/footer-style.css" type="text/css"> <!-- Стили футера -->
+
+</head>
+
+<body>
+
+  <input type="checkbox" id="check-menu" class="check-menu">
+  <label for="check-menu" class="check-menu-label"></label>
+
+  <header class="header">
+
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo" width="50" height="50"></a>
+    <nav class="header-nav">
+      <a class="active" href="index.html">Главная</a>
+      <a href="all-articles.html">Все статьи</a>
+      <a href="#contact">Контакты</a>
+      <a href="gallery.html">Галерея</a>
+
+
+      <!-- <div class="arrow">›</div> -->
+    </nav>
+    <div class="auth">
+      <button class="notification-button">
+        <svg class="bell" viewBox="0 0 448 512">
+          <path
+            d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z">
+          </path>
+          
+        </svg>
+        <span class="badge">2</span>
+
+        <div class="notification-popup">
+          <h3>Новые статьи:</h3>
+          <ul>
+              <li><a href="#">Эффективные SQL-запросы</a></li>
+              <li><a href="#">PostgreSQL:быстрый старт </a></li>
+              <!-- Добавьте больше элементов списка для других статей -->
+          </ul>
+      </div>
+
+      </button>
+
+      <a href="register.html" class="register">Регистрация</a>
+
+    </div>
+
+
+    <div class="burger"> <!-- Иконка бургер меню -->
+      <span></span>
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- Статья 1: Введение в РСУБД -->
+    <div class="article-card" id="article1">
+      <a href="intro-article.html">
+        <h2 class="article-card-title"> Введение в РСУБД </h2>
+
+        <div class="article-image-container">
+          <img src="images/rdbms.webp" alt="РСУБД" class="article-image">
+        </div>
+
+
+        
+        <p class="article-card-text">
+          База данных — это упорядоченный набор структурированной информации или данных,
+          которые обычно хранятся в электронном виде в компьютерной системе.
+          База данных обычно управляется системой управления ...
+        </p>
+      </a>
+    </div>
+
+    <div class="article-card" id="article2">
+      <a href="optimization-article.html">
+        <h2 class="article-card-title"> 10 советов по оптимизации баз данных </h2>
+        <img src="images/opt.jpeg" alt="10 советов по оптимизации баз данных" class="article-image">
+        <p class="article-card-text">
+          В данной статье будут даны общие рекомендации по настройке оптимизации как БД, так и всей СУБД в целом. Также
+          будут даны основные ...
+        </p>
+      </a>
+    </div>
+
+    <div class="article-card" id="article3">
+      <a href="intro-article.html">
+        <h2 class="article-card-title"> Эффективные SQL-запросы</h2>
+        <img src="images/sql-quary-article1.jpg" alt="Искусство написания эффективных SQL-запросов"
+          class="article-image">
+        <p class="article-card-text">
+          База данных — это упорядоченный набор структурированной информации или данных,
+          которые обычно хранятся в электронном виде в компьютерной системе.
+          База данных обычно управляется системой управления ...
+        </p>
+      </a>
+    </div>
+
+
+    <div class="article-card" id="article4">
+      <a href="intro-article.html">
+        <h2 class="article-card-title"> PostgreSQL: быстрый старт  </h2>
+        <img src="images/postgresql.png" alt="Коротко о PostgreSQL" class="article-image">
+        <p class="article-card-text">
+          PostgreSQL — это объектно-реляционная система управления базами данных (ORDBMS),
+          наиболее развитая из открытых СУБД в мире. Имеет открытый исходный код и является альтернативой ...
+        </p>
+      </a>
+    </div>
+
+
+
+  </main>
+
+
+
+  <footer> <!-- Футер с контактной информацией -->
+    <div class="footer-text">
+      <p>Контакты:</p>
+      <address>
+        <p id="contact">Телефон: <a href="tel:71234567890">+7 (123) 456-78-90</a></p>
+        <p>Email: <a href="mailto:info@mail.com">info@mail.com</a></p>
+      </address>
+      <p><small>Copyright © 2023 RelationalDB. All rights reserved.</small></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

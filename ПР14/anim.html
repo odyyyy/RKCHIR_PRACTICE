@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Animations</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .animation-container {
+      position: relative;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      position: absolute;
+      transition: transform 1s ease-in-out;
+    }
+
+    .box1 {
+      top: 0;
+      left: 0;
+    }
+
+    .box2 {
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="animation-container">
+  <div class="box box1" onclick="rotateBox(this)"></div>
+  <div class="box box2" onmouseover="bounceBox(this)"></div>
+</div>
+
+<script>
+  function rotateBox(element) {
+    element.style.transform = 'rotate(360deg)';
+  }
+
+  function bounceBox(element) {
+    element.style.transform = 'scale(1.2)';
+    setTimeout(function () {
+      element.style.transform = 'scale(1)';
+    }, 500);
+  }
+</script>
+
+</body>
+</html>

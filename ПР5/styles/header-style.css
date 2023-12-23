@@ -1,0 +1,165 @@
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  width: 100%;
+  z-index: 100;
+  background-color: #242c2f;
+  transition: all 0.3s ease;
+
+}
+
+.header a {
+  transition: all 0.3s ease-in-out;
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+/* Изменение цвета фона при наведении курсора */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+#check-menu {
+  display: none;
+}
+
+
+/* Лейбл для активации чекбокса (меню-бургера) */
+.check-menu-label {
+  display: none;
+  position: fixed;
+  width: 8vw;
+  height: 8vh;
+  right: 0;
+
+  z-index: 105;
+  cursor: pointer;
+}
+
+/* Стили для бургер-меню */
+.burger {
+  display: none;
+  position: relative;
+  z-index: 50;
+  align-items: center;
+  width: 30px;
+  height: 18px;
+}
+
+/* Стили для полоски бургера */
+.burger span {
+  height: 2px;
+  width: 100%;
+  transform: scale(1);
+  background-color: #ddd;
+}
+
+/* Добавление двух других слоев "бургера" */
+.burger::after,
+.burger::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #ddd;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Позиционирование слоев бургера */
+.burger::before {
+  top: 0;
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+
+
+
+@media screen and (max-width: 850px) {
+
+/* Отображение меню-бургера на экране */
+  .burger {
+    display: flex;
+    margin-right: 10px;
+  }
+
+  /* Скрытие элементов меню кроме лого */
+  .header-nav,
+  .auth {
+    opacity: 0;
+  }
+
+  .check-menu-label {
+    display: flex;
+  }
+
+  /* Устанвока элементов меню в одну колонку */
+  #check-menu:checked~.header {
+
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    transition: all 0.3s ease-in-out;
+
+  }
+
+  #check-menu:checked~header .header-nav,
+  #check-menu:checked~header .auth {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+/* Сдвиг лейбла при открытии меню */
+  #check-menu:checked ~ .check-menu-label{
+    height: 5vh;
+    top: 35vh;
+    right: 45vw;
+  
+
+  }
+
+  #check-menu:checked ~ header .burger{
+    margin-bottom: 10px;
+    margin-right: 0px;
+  }
+
+  /* Добавление анимации к иконки бургера */
+  #check-menu:checked~header .burger span {
+    transform: scale(0);
+  }
+
+
+
+  #check-menu:checked~header .burger::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+  }
+
+
+  #check-menu:checked~header .burger::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+  }
+
+
+
+}
+

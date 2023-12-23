@@ -1,0 +1,148 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  background-color: #f4f3f3;
+
+}
+
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+
+}
+
+
+
+.header {
+  position: fixed;
+  margin-top: 0;
+  height: 8%;
+  width: 100%;
+  z-index: 5;
+  background-color: #242c2f;
+  
+}
+
+.header a {
+  transition:all 0.3s ease-in-out;
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Стили навигации шапки */
+.header-nav{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* Стиль ссылки логотипа */
+.header a.logo {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+/* Изменение цвета фона при наведении курсора */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Стиль активной/текущей ссылки */
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+
+h2 {
+  font-size: 25px;
+  margin-top: 0;
+}
+
+
+/* Стили карточки статьи */
+.article-card{ 
+  
+  display: flex;
+  align-self: center;
+  position: relative;
+  margin-top: 50px;
+  background-color: #ffffff;
+  width: 45vw;
+  height: 35vw;
+  border-radius: 15px;
+}
+
+
+.article-card-text {
+    color: #272424;
+    line-height: 1.56;
+    position: absolute;
+    font-size: 18px;
+    bottom: 1%;
+    left: 10%;
+    right: 5%;
+}
+
+ p.pilcrow {
+  text-indent: 0;
+  display: inline;
+}
+
+
+/* Стили картинки в карточке статьи */
+.article-image{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-60%);
+  border-radius: 5%;
+  height: 470px;
+  width: 700px;
+}
+
+
+
+/* Стили на тег <a> в карточке статьи */
+.article-card a{
+  text-decoration: none;
+  color: #333;
+
+}
+
+.article-card-title{
+  position: relative;
+  right: -90px;
+  top: 10px;
+  font-size: 30px;
+
+}
+
+.article-card a:hover{
+  color: black;
+}
+
+#article1{
+  margin-top:125px;
+}
+
+footer{
+  background-color: rgb(238, 238, 238);
+  margin: 10px;
+  margin-right: 250px;
+  margin-left: 250px;
+  
+}
+
+
+

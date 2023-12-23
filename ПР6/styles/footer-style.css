@@ -1,0 +1,15 @@
+/* Стили для футера */
+
+
+footer {
+    background-color: rgb(218, 218, 223);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    margin: 0 auto;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Связаться с нами</title> <!-- Заголовок страницы -->
+  <meta charset="windows-1251"> <!-- Кодировка -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> <!-- Иконка вкладки -->
+  <link rel="stylesheet" href="styles/header-style.css" type="text/css"> <!-- Стили шапки -->
+  <link rel="stylesheet" href="styles/contact-style.css" type="text/css">
+  <link rel="stylesheet" href="styles/footer-style.css" type="text/css"> <!-- Стили футера -->
+</head>
+
+<body>
+  <input type="checkbox" id="check-menu" class="check-menu">
+  <label for="check-menu" class="check-menu-label"></label>
+
+  <header class="header">
+
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo" width="50" height="50"></a>
+    <nav class="header-nav">
+      <a href="index.html">Главная</a>
+      <a href="all-articles.html">Все статьи</a>
+      <a href="contact.html" class="active">Контакты</a>
+      <a href="gallery.html">Галерея</a>
+
+
+      <!-- <div class="arrow">›</div> -->
+    </nav>
+    <div class="auth">
+      <button class="notification-button">
+        <svg class="bell" viewBox="0 0 448 512">
+          <path
+            d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z">
+          </path>
+
+        </svg>
+        <span class="badge">2</span>
+
+        <div class="notification-popup">
+          <h3>Новые статьи:</h3>
+          <ul>
+            <li><a href="#">Эффективные SQL-запросы</a></li>
+            <li><a href="#">PostgreSQL: быстрый старт </a></li>
+            <!-- Добавьте больше элементов списка для других статей -->
+          </ul>
+        </div>
+
+      </button>
+
+      <a href="register.html"  class="register">Регистрация</a>
+
+    </div>
+
+
+    <div class="burger"> <!-- Иконка бургер меню -->
+      <span></span>
+    </div>
+
+  </header>
+
+  <main>
+    <div class="contact-container">
+
+  
+      <div class="glassmorphism-form">
+        <h2>Связаться с нами</h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Имя">
+          <input type="text" placeholder="Фамилия">
+          <input type="email" placeholder="Email">
+          <input type="tel" placeholder="Телефон">
+          <textarea class="contact-form-message" placeholder="Ваше сообщение" name="message" wrap="soft" maxlength="255" required></textarea>
+          <button class="contact-form-button" type="submit">Отправить</button>
+        </form>
+      </div>
+
+    </div>
+
+
+  </main>
+
+
+</body>
+
+</html>

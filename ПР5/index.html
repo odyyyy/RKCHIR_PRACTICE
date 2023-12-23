@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>ВСЁ о РСУБД</title> <!-- Заголовок страницы -->
+  <meta charset="utf-8"> <!-- Кодировка -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> <!-- Иконка вкладки -->
+  <link rel="stylesheet" href="styles/header-style.css" type="text/css"> <!-- Стили шапки -->
+  <link rel="stylesheet" href="styles/style.css" type="text/css">
+  <link rel="stylesheet" href="styles/footer-style.css" type="text/css"> <!-- Стили футера -->
+
+</head>
+
+<body>
+
+  <input type="checkbox" id="check-menu" class="check-menu">
+  <label for="check-menu" class="check-menu-label"></label>
+
+  <header class="header">
+
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo" width="50" height="50"></a>
+    <nav class="header-nav">
+      <a class="active" href="index.html">Главная</a>
+      <a href="#all_articles">Все статьи</a>
+      <a href="#contact">Контакты</a>
+      <a href="gallery.html">Галерея</a>
+    </nav>
+    <div class="auth">
+      <a href="register.html" class="register">Регистрация</a>
+    </div>
+
+
+    <div class="burger"> <!-- Иконка бургер меню -->
+      <span></span>
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- Статья 1: Введение в РСУБД -->
+    <div class="article-card" id="article1">
+      <a href="intro-article.html">
+        <h2 class="article-card-title"> Введение в РСУБД </h2>
+        <img src="images/rdbms.webp" alt="Введение в РСУБД" class="article-image">
+        <p class="article-card-text">
+          База данных — это упорядоченный набор структурированной информации или данных,
+          которые обычно хранятся в электронном виде в компьютерной системе.
+          База данных обычно управляется системой управления ...
+        </p>
+      </a>
+    </div>
+
+    <div class="article-card" id="article2">
+      <a href="optimization-article.html">
+        <h2 class="article-card-title"> 10 советов по оптимизации баз данных </h2>
+        <img src="images/opt.jpeg" alt="10 советов по оптимизации баз данных" class="article-image">
+        <p class="article-card-text">
+          В данной статье будут даны общие рекомендации по настройке оптимизации как БД, так и всей СУБД в целом. Также
+          будут даны основные ...
+        </p>
+      </a>
+    </div>
+
+    <div class="article-card" id="article3">
+      <a href="intro-article.html">
+        <h2 class="article-card-title"> Искусство написания эффективных SQL-запросов </h2>
+        <img src="images/sql-quary-article1.jpg" alt="Искусство написания эффективных SQL-запросов"
+          class="article-image">
+        <p class="article-card-text">
+          База данных — это упорядоченный набор структурированной информации или данных,
+          которые обычно хранятся в электронном виде в компьютерной системе.
+          База данных обычно управляется системой управления ...
+        </p>
+      </a>
+    </div>
+  </main>
+
+
+
+  <footer> <!-- Футер с контактной информацией -->
+    <div class="footer-text">
+      <p>Контакты:</p>
+      <address>
+        <p id="contact">Телефон: <a href="tel:71234567890">+7 (123) 456-78-90</a></p>
+        <p>Email: <a href="mailto:info@mail.com">info@mail.com</a></p>
+      </address>
+      <p><small>Copyright © 2023 RelationalDB. All rights reserved.</small></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

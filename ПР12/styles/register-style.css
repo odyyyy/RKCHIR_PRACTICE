@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(45deg, #82bfe8, #0babfb, #83ccf0);
+
+
+}
+
+main{
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Стиль активной/текущей ссылки */
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.register-container {
+  position: relative;
+}
+
+@keyframes square-moving {
+  0%,100% {
+    transform: translateY(-20px);
+  }
+  
+  50% {
+    transform: translateY(20px);
+  }
+}
+  
+  .square {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    animation: square-moving 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+  }
+  
+
+  
+  .square:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: -60px;
+    right: -45px;
+  }
+  
+  .square:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 55px;
+    left: -175px;
+    z-index: 2;
+  }
+  
+  .square:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    bottom: 85px;
+    right: -45px;
+    z-index: 2;
+  }
+  
+  .square:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    bottom: 5px;
+    left: -95px;
+  }
+  
+  .square:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    top: -15px;
+    left: -25px;
+  }
+  
+  .square:nth-child(6) {
+    width: 85px;
+    height: 85px;
+    top: 165px;
+    right: -155px;
+    z-index: 2;
+  }
+
+
+
+.glassmorphism-form {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+.glassmorphism-form h2 {
+  margin: 0;
+  color: #fff;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+input, button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+input::placeholder, button {
+  color: #fff;
+}
+
+input:focus, button:hover {
+  background: rgba(2, 217, 255, 0.549);
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.captcha{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.captcha-text {
+  margin: auto 0;
+}

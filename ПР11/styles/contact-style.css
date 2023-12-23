@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(45deg, #82bfe8, #0babfb, #83ccf0);
+
+
+}
+
+main{
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Стиль активной/текущей ссылки */
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.contact-container {
+  position: relative;
+}
+
+
+
+.glassmorphism-form {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  width: 60vw;
+  height: 31vh;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+.glassmorphism-form h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.contact-form-message {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    height: 100px; /* Высота поля для ввода текста */
+}
+
+/* Выравнивание кнопки влево cнизу */
+.contact-form-button {
+    justify-self: left;  
+    align-self: end;     
+}
+
+input, button, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+  resize: none;
+}
+
+input::placeholder, button, textarea::placeholder   {
+  color: #fff;
+}
+
+input:focus, button:hover, textarea:focus  {
+  background: rgba(2, 217, 255, 0.549);
+  outline: none;
+  transition: all 0.7s;
+  overflow: hidden;
+  
+}
+
+button {
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 850px) {
+    .glassmorphism-form{
+        height: 40vh;
+    }
+    .contact-form {
+        
+      grid-template-columns: 1fr; /* Одна колонка */
+      grid-gap: 10px; 
+    }
+  
+    .contact-form-message {
+      grid-column: 1 / 2; /* Элемент "Сообщение" занимает всю ширину колонки */
+    }
+  }
+  

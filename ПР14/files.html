@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"> <!-- Иконка вкладки -->
+    <title></title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 150px;
+        }
+
+        li {
+            display: flex;
+            padding: 10px;
+            margin: 5px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 150px;
+        }
+
+
+
+        .selected {
+            background-color: #f7c333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="selectableList">
+        <li>Элемент 1</li>
+        <li>Элемент 2</li>
+        <li>Элемент 3</li>
+        <li>Элемент 4</li>
+        <li>Элемент 5</li>
+    </ul>
+
+    <script>
+        let list = document.getElementById('selectableList');
+        let items = list.getElementsByTagName('li');
+
+        list.addEventListener('click', function (e) {
+            let clickedItem = e.target;
+
+
+            e.preventDefault();
+            if (clickedItem.tagName !== "UL") {
+                if (e.ctrlKey || e.metaKey) {
+                    clickedItem.classList.toggle('selected');
+                } else {
+                    for (let i = 0; i < items.length; i++) {
+                        let currentItem = items[i];
+                        currentItem.classList.remove('selected');
+                    }
+                    clickedItem.classList.add('selected');
+                }
+            }
+
+
+        });
+    </script>
+
+
+<!-- Слайдер -->
+    <style>
+        #sliderContainer {
+            width: 80%;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        #slider {
+            
+            width: 1000px;
+            height: 20px;
+            background-color: #ccc;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #sliderHandle {
+            width: 15px;
+            height: 30px;
+            background-color: #ff2600;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius:5px;
+            user-select: none;
+        }
+    </style>
+
+    <div id="sliderContainer">
+        <div id="slider">
+            <div id="sliderHandle"></div>
+        </div>
+    </div>
+
+    <script>
+        let slider = document.getElementById('slider');
+        let handle = document.getElementById('sliderHandle');
+        let isDragging = false;
+
+        handle.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', handleMouseUp);
+        });
+
+        function handleMouseMove(e) {
+            if (isDragging) {
+                let sliderRect = slider.getBoundingClientRect();
+                let newPosition = e.clientX - sliderRect.left;
+
+                if (newPosition < 0) {
+                    newPosition = 0;
+                } else if (newPosition > sliderRect.width) {
+                    newPosition = sliderRect.width - handle.offsetWidth;
+                }
+
+                handle.style.left = newPosition + 'px';
+            }
+        }
+
+        function handleMouseUp() {
+            isDragging = false;
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        }
+
+        // Дополнительно: обработка резкого движения мыши за пределы слайдера
+        document.addEventListener('mouseup', function () {
+            if (isDragging) {
+                isDragging = false;
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
